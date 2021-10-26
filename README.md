@@ -1,4 +1,4 @@
-# Shop Api
+# Treinamento Básico Web Api
 
 ### Sinopse ###
 <p> 
