@@ -7,7 +7,14 @@
 
 ### Tópicos ###
 
-
+* REST.
+* Criando uma aplicação.
+* Controllers.
+* Criando minha primeira API REST.
+* Segurança.
+* Versionamento e Documentação da API.
+* Logging e Monitoramento.
+* Realizando o Deploy da API.
 
 <!--
 ### Projeto ###
