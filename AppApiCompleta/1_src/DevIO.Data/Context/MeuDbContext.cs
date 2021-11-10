@@ -1,9 +1,10 @@
-﻿using System;
+﻿using DevIO.Business.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using DevIO.Business.Models;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace DevIO.Data.Context
 {
@@ -17,10 +18,10 @@ namespace DevIO.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            foreach (var property in modelBuilder.Model.GetEntityTypes()
-                .SelectMany(e => e.GetProperties()
-                    .Where(p => p.ClrType == typeof(string))))
-                property.Relational().ColumnType = "varchar(100)";
+            //foreach (var property in modelBuilder.Model.GetEntityTypes()
+            //    .SelectMany(e => e.GetProperties()
+            //        .Where(p => p.ClrType == typeof(string))))
+            //    property.Relational().ColumnType = "varchar(100)";
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeuDbContext).Assembly);
 
