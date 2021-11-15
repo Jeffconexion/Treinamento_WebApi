@@ -1,4 +1,6 @@
+using DevIO.Business.Intefaces;
 using DevIO.Data.Context;
+using DevIO.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,13 @@ namespace DevIO.Api
         {
            services.AddDbContext<MeuDbContext>(opt =>
            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<MeuDbContext>();
+            services.AddScoped<MeuDbContext>();
+            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+
+
 
             services.AddControllers();
         }
