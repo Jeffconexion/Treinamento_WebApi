@@ -26,8 +26,8 @@ namespace DevIO.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           services.AddDbContext<MeuDbContext>(opt =>
-           opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<MeuDbContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<MeuDbContext>();

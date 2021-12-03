@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using DevIO.Business.Intefaces;
+﻿using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Models.Validations;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DevIO.Business.Services
 {
@@ -12,7 +12,7 @@ namespace DevIO.Business.Services
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEnderecoRepository _enderecoRepository;
 
-        public FornecedorService(IFornecedorRepository fornecedorRepository, 
+        public FornecedorService(IFornecedorRepository fornecedorRepository,
                                  IEnderecoRepository enderecoRepository,
                                  INotificador notificador) : base(notificador)
         {
@@ -22,7 +22,7 @@ namespace DevIO.Business.Services
 
         public async Task<bool> Adicionar(Fornecedor fornecedor)
         {
-            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor) 
+            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
                 || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) return false;
 
             if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento).Result.Any())

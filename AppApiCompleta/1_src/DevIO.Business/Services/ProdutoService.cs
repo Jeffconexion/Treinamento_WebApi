@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using DevIO.Business.Intefaces;
+﻿using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Models.Validations;
+using System;
+using System.Threading.Tasks;
 
 namespace DevIO.Business.Services
 {
