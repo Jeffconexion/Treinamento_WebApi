@@ -16,6 +16,16 @@
 * Logging e Monitoramento.
 * Realizando o Deploy da API.
 
+### Configurações ###
+
+* Camada Data:
+Add-Migration v1 -Context MeuDbContext
+Update-Database -Context MeuDbContext
+
+* Camada Api:
+Add-Migration v1 -Context ApplicationDbContext
+Update-Database -Context ApplicationDbContext
+
 <!--
 ### Projeto ###
 
