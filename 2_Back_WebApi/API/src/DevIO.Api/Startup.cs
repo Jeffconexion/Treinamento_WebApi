@@ -1,4 +1,3 @@
-using AutoMapper;
 using DevIO.Api.Configuration;
 using DevIO.Data.Context;
 using Microsoft.AspNetCore.Builder;

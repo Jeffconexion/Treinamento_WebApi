@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using DevIO.Business.Intefaces;
+﻿using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Models.Validations;
+using System;
+using System.Threading.Tasks;
 
 namespace DevIO.Business.Services
 {
@@ -12,7 +12,7 @@ namespace DevIO.Business.Services
         private readonly IUser _user;
 
         public ProdutoService(IProdutoRepository produtoRepository,
-                              INotificador notificador, 
+                              INotificador notificador,
                               IUser user) : base(notificador)
         {
             _produtoRepository = produtoRepository;

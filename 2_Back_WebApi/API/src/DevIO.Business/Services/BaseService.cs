@@ -32,7 +32,7 @@ namespace DevIO.Business.Services
         {
             var validator = validacao.Validate(entidade);
 
-            if(validator.IsValid) return true;
+            if (validator.IsValid) return true;
 
             Notificar(validator);
 

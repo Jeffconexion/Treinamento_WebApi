@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
-using DevIO.Api.Extensions;
+﻿using DevIO.Api.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace DevIO.Api.ViewModels
 {
@@ -27,7 +27,7 @@ namespace DevIO.Api.ViewModels
         public string Descricao { get; set; }
 
         // Evita o erro de conversão de string vazia para IFormFile
-        [JsonIgnore]        
+        [JsonIgnore]
         public IFormFile ImagemUpload { get; set; }
 
         public string Imagem { get; set; }

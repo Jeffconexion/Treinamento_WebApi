@@ -1,10 +1,4 @@
-﻿using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using DevIO.Api.Controllers;
+﻿using DevIO.Api.Controllers;
 using DevIO.Api.Extensions;
 using DevIO.Api.ViewModels;
 using DevIO.Business.Intefaces;
@@ -13,6 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DevIO.Api.V1.Controllers
 {
@@ -25,9 +25,9 @@ namespace DevIO.Api.V1.Controllers
         private readonly AppSettings _appSettings;
         private readonly ILogger _logger;
 
-        public AuthController(INotificador notificador, 
-                              SignInManager<IdentityUser> signInManager, 
-                              UserManager<IdentityUser> userManager, 
+        public AuthController(INotificador notificador,
+                              SignInManager<IdentityUser> signInManager,
+                              UserManager<IdentityUser> userManager,
                               IOptions<AppSettings> appSettings,
                               IUser user, ILogger<AuthController> logger) : base(notificador, user)
         {
@@ -63,7 +63,7 @@ namespace DevIO.Api.V1.Controllers
 
             return CustomResponse(registerUser);
         }
-    
+
         [HttpPost("entrar")]
         public async Task<ActionResult> Login(LoginUserViewModel loginUser)
         {
@@ -73,7 +73,7 @@ namespace DevIO.Api.V1.Controllers
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("Usuario "+ loginUser.Email +" logado com sucesso");
+                _logger.LogInformation("Usuario " + loginUser.Email + " logado com sucesso");
                 return CustomResponse(await GerarJwt(loginUser.Email));
             }
             if (result.IsLockedOut)
@@ -126,7 +126,7 @@ namespace DevIO.Api.V1.Controllers
                 {
                     Id = user.Id,
                     Email = user.Email,
-                    Claims = claims.Select(c=> new ClaimViewModel{ Type = c.Type, Value = c.Value})
+                    Claims = claims.Select(c => new ClaimViewModel { Type = c.Type, Value = c.Value })
                 }
             };
 

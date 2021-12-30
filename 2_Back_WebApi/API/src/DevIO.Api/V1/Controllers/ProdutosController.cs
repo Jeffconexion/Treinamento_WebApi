@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text.Json;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using DevIO.Api.Controllers;
 using DevIO.Api.Extensions;
 using DevIO.Api.ViewModels;
@@ -14,7 +7,10 @@ using DevIO.Business.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace DevIO.Api.V1.Controllers
 {
@@ -28,9 +24,9 @@ namespace DevIO.Api.V1.Controllers
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ProdutosController(INotificador notificador, 
-                                  IProdutoRepository produtoRepository, 
-                                  IProdutoService produtoService, 
+        public ProdutosController(INotificador notificador,
+                                  IProdutoRepository produtoRepository,
+                                  IProdutoService produtoService,
                                   IMapper mapper,
                                   IUser user,
                                   IHttpContextAccessor httpContextAccessor) : base(notificador, user)
@@ -161,7 +157,7 @@ namespace DevIO.Api.V1.Controllers
         [HttpPost("Adicionar")]
         public async Task<ActionResult<ProdutoViewModel>> AdicionarAlternativo(
             // Binder personalizado para envio de IFormFile e ViewModel dentro de um FormData compatível com .NET Core 3.1 ou superior (system.text.json)
-            [ModelBinder(BinderType = typeof(ProdutoModelBinder))] 
+            [ModelBinder(BinderType = typeof(ProdutoModelBinder))]
             ProdutoImagemViewModel produtoViewModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -177,7 +173,7 @@ namespace DevIO.Api.V1.Controllers
 
             return CustomResponse(produtoViewModel);
         }
-        
+
         [RequestSizeLimit(40000000)]
         //[DisableRequestSizeLimit]
         [HttpPost("imagem")]
@@ -208,7 +204,7 @@ namespace DevIO.Api.V1.Controllers
             }
 
             return true;
-        }      
+        }
 
         #endregion
     }

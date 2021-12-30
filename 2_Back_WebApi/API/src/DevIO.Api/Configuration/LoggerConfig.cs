@@ -1,10 +1,8 @@
-﻿using System;
-using DevIO.Api.Extensions;
-using Elmah.Io.AspNetCore;
-using Elmah.Io.AspNetCore.HealthChecks;
+﻿using DevIO.Api.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace DevIO.Api.Configuration
 {

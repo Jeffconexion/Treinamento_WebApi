@@ -1,7 +1,5 @@
-﻿using System;
-using DevIO.Api.Controllers;
+﻿using DevIO.Api.Controllers;
 using DevIO.Business.Intefaces;
-using Elmah.Io.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

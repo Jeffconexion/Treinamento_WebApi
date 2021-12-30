@@ -1,9 +1,9 @@
-﻿using System;
+﻿using DevIO.Business.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using DevIO.Business.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace DevIO.Data.Context
 {
