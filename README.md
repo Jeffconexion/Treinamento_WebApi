@@ -19,11 +19,11 @@
 ### Configurações ###
 
 * Camada Data:
-Add-Migration v1 -Context MeuDbContext
+Add-Migration v1 -Context MeuDbContext/
 Update-Database -Context MeuDbContext
 
 * Camada Api:
-Add-Migration v1 -Context ApplicationDbContext
+Add-Migration v1 -Context ApplicationDbContext/
 Update-Database -Context ApplicationDbContext
 
 <!--
