@@ -52,6 +52,11 @@ namespace DevIO.Api.V1.Controllers
             return fornecedor;
         }
 
+        /*
+         *id do usuário em AspNetUsers
+         * em AspNetUserClaims coloca o tipo fornecedor
+         * e o valor adicionar.
+         */
         [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
